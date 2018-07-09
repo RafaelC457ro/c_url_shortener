@@ -40,7 +40,3 @@ void s_list_free(StringList *s_list){
     }
     free(s_list->list);
 }
-
-
-
-
