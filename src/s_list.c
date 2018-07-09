@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define INIT_SIZE 100; 
+#define INIT_SIZE 1000; 
 
 StringList* s_list_init() {
     StringList *s_list;
