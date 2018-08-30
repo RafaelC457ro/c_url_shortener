@@ -6,7 +6,7 @@ Just a command line url shorter.
 build:
 
 ```
-$cmake -H. -Bbuilds
+$cmake -H. -Bbuild
 
 $cmake --build build
 
