@@ -2,19 +2,19 @@
 
 Just a command line url shorter.
 
-## dependecies
+## install
 
-```
-$ sudo apt install build-essential cmake cmocka
+```sh
+sudo apt install build-essential cmake cmocka
 
 ```
 
 build:
 
-```
-$cmake -H. -Bbuild
+```sh
+cmake -H. -Bbuild
 
-$cmake --build build
+cmake --build build
 
 ```
 
