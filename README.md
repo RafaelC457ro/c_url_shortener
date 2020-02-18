@@ -2,6 +2,12 @@
 
 Just a command line url shorter.
 
+## dependecies
+
+```
+$ sudo apt install build-essential cmake cmocka
+
+```
 
 build:
 

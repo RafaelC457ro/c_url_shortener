@@ -1,4 +1,7 @@
 bin/
 build/
 builds/
+outs/
+.vs/
+.vscode/
 *.swp
