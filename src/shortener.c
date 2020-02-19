@@ -4,13 +4,13 @@
 
 typedef struct command
 {
-    short int type;
-    char *payload;
+    short int  type;
+    char      *payload;
 } Command;
 
-int parse_command(Command *c,
+int parse_command(Command    *c,
                   const char *data,
-                  size_t len)
+                  size_t      len)
 {
     char GET[] = "GET";
     char PUT[] = "PUT";

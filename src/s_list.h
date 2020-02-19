@@ -13,7 +13,7 @@ StringList* s_list_init();
 
 int s_list_append(StringList *s_list, char *s);
 
-int s_list_get(StringList *s_list, int index, char *s);
+int s_list_get(StringList *s_list, int index, char **s);
 
 void s_list_free(StringList *s_list);
 
