@@ -5,9 +5,9 @@
 
 #include "state.h"
 
-void test1()
+static void should_init_a_state(void **state)
 {
-    state *s;
+    State *s;
 
     s = state_new();
     assert_non_null(s);
@@ -15,9 +15,9 @@ void test1()
     state_free(s);
 }
 
-void test2()
+static void should_set_state(void **state)
 {
-    state *s;
+    State *s;
     int e;
 
     s = state_new();
@@ -34,10 +34,9 @@ void test2()
 
 int main(void)
 {
-    const UnitTest tests[] = {
-        unit_test(test1),
-        unit_test(test2),
+    const struct CMUnitTest tests[] = {
+        cmocka_unit_test(should_init_a_state),
+        cmocka_unit_test(should_set_state)
     };
-
-    return run_tests(tests);
+    return cmocka_run_group_tests(tests, NULL, NULL);
 }

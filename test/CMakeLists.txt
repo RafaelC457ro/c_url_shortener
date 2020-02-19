@@ -1,5 +1,16 @@
+macro (create_test target)
+  add_test (NAME ${target} COMMAND $<TARGET_FILE:${target}>)
+endmacro (create_test)
+
 include_directories ("${PROJECT_SOURCE_DIR}")
-add_executable(test_state test_state.c)
-add_dependencies(test_state test_state)
-add_test(test_state test_state)
-target_link_libraries(test_state state cmocka)
+
+file(GLOB files "*.c")
+
+set(i 0)
+foreach(file ${files})
+  add_executable(test_${i} ${file})
+  add_dependencies(test_${i} test_${i})
+  target_link_libraries(test_${i} slist state cmocka)
+  create_test(test_${i})
+  math(EXPR i "${i} + 1")
+endforeach()
