@@ -5,7 +5,7 @@ Just a command line url shorter.
 ## Install
 
 ```sh
-sudo apt install build-essential cmake cmocka
+sudo apt install build-essential cmake libcmocka-dev
 ```
 
 ## Build
