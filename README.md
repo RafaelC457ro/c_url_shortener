@@ -6,22 +6,29 @@ Just a command line url shorter.
 
 ```sh
 sudo apt install build-essential cmake cmocka
-
 ```
 
-build:
+## build
 
 ```sh
-cmake -H. -Bbuild
-
-cmake --build build
-
+mkdir build
+cd build
+cmake ..
+make
 ```
 
-usage:
+## test
 
+```sh
+cd build\
+make
+ctest -V
 ```
-$.\bin\shorter
+
+# usage
+
+```sh
+./bin/shortener
 
 SET www.url.com
 
@@ -34,3 +41,7 @@ www.url.com
 ```
 
 type `exit` to exit.
+
+## License
+
+[MIT License](LICENSE.md) © [Rafael Castro](https://twitter.com/rafaelc457ro)
