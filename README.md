@@ -2,13 +2,13 @@
 
 Just a command line url shorter.
 
-## install
+## Install
 
 ```sh
 sudo apt install build-essential cmake cmocka
 ```
 
-## build
+## Build
 
 ```sh
 mkdir build
@@ -17,7 +17,7 @@ cmake ..
 make
 ```
 
-## test
+## Test
 
 ```sh
 cd build\
@@ -25,7 +25,7 @@ make
 ctest -V
 ```
 
-# usage
+## Usage
 
 ```sh
 ./bin/shortener
