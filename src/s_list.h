@@ -1,4 +1,4 @@
-#ifndef __S_LIST_H__   
+#ifndef __S_LIST_H__
 #define __S_LIST_H__
 
 #define S_LIST_INIT_SIZE 1000
@@ -9,7 +9,7 @@ typedef struct s_list {
     char **s;
 } StringList;
 
-StringList* s_list_init();
+StringList *s_list_init();
 
 int s_list_append(StringList *s_list, char *s);
 

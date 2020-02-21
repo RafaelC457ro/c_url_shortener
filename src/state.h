@@ -1,9 +1,7 @@
 #ifndef STATE_H_INCLUDED
 #define STATE_H_INCLUDED
 
-
-typedef struct state
-{
+typedef struct state {
     int value;
 } State;
 
