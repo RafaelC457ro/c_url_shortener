@@ -6,7 +6,7 @@
 typedef struct h_list {
     int length;
     int size;
-    void **keys;
+    char **keys;
     char **data;
 } HashList;
 

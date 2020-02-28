@@ -19,4 +19,5 @@ add_subdirectory(test)
 
 add_library(state ${PROJECT_SOURCE_DIR}/state.c)
 add_library(slist ${PROJECT_SOURCE_DIR}/s_list.c)
+add_library(hashlist ${PROJECT_SOURCE_DIR}/hash_list.c)
 add_executable(shortener ${PROJECT_SOURCE_DIR}/shortener.c)
