@@ -26,7 +26,7 @@ int hash_list_append(HashList *h_list, char *k, char *v) {
             realloc(h_list->keys,
                     (h_list->size + HASH_LIST_INIT_SIZE) * sizeof(char *));
         if (h_list->keys == NULL) {
-            fprintf(stderr, "Out of memory realocat keys\n");
+            fprintf(stderr, "Out of memory realocate keys\n");
             exit(0);
         }
 
