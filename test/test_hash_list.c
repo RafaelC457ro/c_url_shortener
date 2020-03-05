@@ -15,14 +15,22 @@ static void should_init_a_hash_list(void **state) {
 
 static void should_append_a_string_with_a_key(void **state) {
     HashList *h = hash_list_init();
-    char *key = "key";
-    char *st = "String 1";
+    char *key_one = "key_1";
+    char *key_two = "key_2";
+    char *st_one = "String 1";
+    char *st_two = "String 2";
 
-    hash_list_append(h, key, st);
+    hash_list_append(h, key_one, st_one);
 
     assert_int_equal(h->length, 1);
-    assert_string_equal(h->keys[0], key);
-    assert_string_equal(h->data[0], st);
+    assert_string_equal(h->keys[0], key_one);
+    assert_string_equal(h->data[0], st_one);
+
+    hash_list_append(h, key_two, st_two);
+
+    assert_int_equal(h->length, 2);
+    assert_string_equal(h->keys[1], key_two);
+    assert_string_equal(h->data[1], st_two);
 
     hash_list_free(h);
 }
@@ -36,6 +44,7 @@ static void should_get_strings_with_a_key(void **state) {
 
     char *stc_one;
     char *stc_two;
+    int r;
 
     hash_list_append(h, key_one, st_one);
     hash_list_append(h, key_two, st_two);
@@ -43,9 +52,9 @@ static void should_get_strings_with_a_key(void **state) {
     hash_list_get(h, key_one, &stc_one);
     hash_list_get(h, key_two, &stc_two);
 
-    // assert_string_equal(st_one, stc_one);
-    // assert_string_equal(st_two, stc_two);
-
+    assert_string_equal(st_one, stc_one);
+    assert_string_equal(st_two, stc_two);
+  
     hash_list_free(h);
 }
 

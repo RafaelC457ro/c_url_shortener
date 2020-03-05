@@ -52,17 +52,17 @@ int hash_list_append(HashList *h_list, char *k, char *v) {
 }
 
 int hash_list_get(HashList *h_list, char *k, char **s) {
-    // int i = 0;
-    // while (i < h_list->length -1) {
-    //     if (strcmp(h_list->keys[i], k) != 0) {
-    //         i++;
-    //         continue;
-    //     }
+    int i = 0;
+    while (i <= h_list->length -1) {
+        if (strcmp(h_list->keys[i], k) != 0) {
+            i++;
+            continue;
+        }
 
-    //     *s = h_list->data[i];
-    //     break;
-    // }
-    // return 0;
+        *s = h_list->data[i];
+        return 0;
+    }
+    return -1;
 }
 
 void hash_list_free(HashList *h_list) {
