@@ -1,6 +1,6 @@
 # C URL Shortener
 
-![C/C++ CI](https://github.com/RafaelC457ro/c_url_shortener/workflows/C/C++%20CI/badge.svg)
+![C/C++ CI](https://github.com/RafaelC457ro/c_url_shortener/workflows/C/C++%20CI/badge.svg?branch=master)
 
 Just a command line url shorter.
 
