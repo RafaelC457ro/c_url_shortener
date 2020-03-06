@@ -20,4 +20,4 @@ jobs:
     - name: build
       run: sudo cmake --build build
     - name: test
-      run: cd build && ctest
+      run: cd build && ctest -V
