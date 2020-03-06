@@ -16,8 +16,6 @@ jobs:
     - name: build dir
       run: mkdir build && cd build
     - name: cmake
-      run: cmake ..
-    - name: make
-      run: make
-    - name: ctest
+      run: cmake --build build && make
+    - name: cd build && ctest
       run: ctest -V
