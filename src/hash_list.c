@@ -9,7 +9,7 @@ HashList *hash_list_init() {
 
     if (h_list == NULL) {
         fprintf(stderr, "Out of memory on create struct\n");
-        exit(0);
+        exit(0); // fix this
     }
 
     h_list->size = HASH_LIST_INIT_SIZE;
@@ -27,7 +27,7 @@ int hash_list_append(HashList *h_list, char *k, char *v) {
                     (h_list->size + HASH_LIST_INIT_SIZE) * sizeof(char *));
         if (h_list->keys == NULL) {
             fprintf(stderr, "Out of memory realocate keys\n");
-            exit(0);
+            exit(0); // fix this
         }
 
         h_list->data =
@@ -36,7 +36,7 @@ int hash_list_append(HashList *h_list, char *k, char *v) {
 
         if (h_list->data == NULL){
             fprintf(stderr, "Out of memory on realocate data\n");
-            exit(0);
+            exit(0); // fix this
         }
     }
 

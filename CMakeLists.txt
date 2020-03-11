@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Project's name
-project(c_url_shorter)
+project(c_url_shortener)
 
 enable_testing()
 
@@ -17,7 +17,8 @@ set(PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 include_directories(PROJECT_SOURCE_DIR)
 add_subdirectory(test)
 
-add_library(state ${PROJECT_SOURCE_DIR}/state.c)
-add_library(slist ${PROJECT_SOURCE_DIR}/s_list.c)
-add_library(hashlist ${PROJECT_SOURCE_DIR}/hash_list.c)
-add_executable(shortener ${PROJECT_SOURCE_DIR}/shortener.c)
+file(GLOB SOURCES ${PROJECT_SOURCE_DIR}/*.c)
+file(GLOB HEADERS  ${PROJECT_SOURCE_DIR}/*.h) 
+
+add_library(short ${SOURCES} ${HEADERS})
+add_executable(shortener  ${PROJECT_SOURCE_DIR}/shortener.c)
