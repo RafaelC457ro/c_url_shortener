@@ -5,6 +5,16 @@
 static const char *BASE_62_CHARS =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+/**
+ * Reverte string.
+ * Exemple:
+ *
+ * base_62_strrev(h, key, &stc_one);
+ *
+ * @param[in] str string to reverse
+ * @param[out] str reversed string
+ */
+
 char *base_62_strrev(char *str) {
     char *p1, *p2;
 
@@ -16,6 +26,20 @@ char *base_62_strrev(char *str) {
     }
     return str;
 }
+
+/**
+ * Convert a integer to base 62 string
+ * Exemple:
+ *
+ *  char k[11];
+ *  uint64_t n = 0x16B5C9428C1B05;
+ *
+ *  base_62_encode(n, k);
+ *  0x16B5C9428C1B05 -> thatscool
+ *
+ * @param[in] n interger to parse
+ * @param[in] ponter to base 62 string
+ */
 
 void base_62_encode(uint64_t n, char *s) {
     int i;
