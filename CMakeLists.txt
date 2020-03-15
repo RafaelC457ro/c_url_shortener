@@ -21,4 +21,5 @@ file(GLOB SOURCES ${PROJECT_SOURCE_DIR}/*.c)
 file(GLOB HEADERS  ${PROJECT_SOURCE_DIR}/*.h) 
 
 add_library(short ${SOURCES} ${HEADERS})
-add_executable(shortener  ${PROJECT_SOURCE_DIR}/shortener.c)
+add_executable(shortener ${PROJECT_SOURCE_DIR}/shortener.c)
+target_link_libraries(shortener short)
