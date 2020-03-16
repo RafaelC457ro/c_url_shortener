@@ -6,7 +6,7 @@ static const char *BASE_62_CHARS =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 /**
- * Reverte string.
+ * Reverse string.
  * Exemple:
  *
  * base_62_strrev(h, key, &stc_one);
