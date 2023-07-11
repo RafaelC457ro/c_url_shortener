@@ -21,7 +21,7 @@ include_directories ("${PROJECT_SOURCE_DIR}")
 file(GLOB files "*.c")
 
 foreach(file ${files})
-get_filename_component(exec_name ${file} NAME_WE)
+  get_filename_component(exec_name ${file} NAME_WE)
   add_executable(${exec_name} ${file})
   target_link_libraries(${exec_name} short cmocka)
   add_test (NAME ${exec_name} COMMAND $<TARGET_FILE:${exec_name}>)

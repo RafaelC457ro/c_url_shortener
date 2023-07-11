@@ -93,7 +93,6 @@ int main(int argc, char *argv[]) {
     while (1) {   
         getline(&input, &input_size, stdin);
 
-        // Remove the newline character from the input
         input[strcspn(input, "\n")] = '\0';
 
         if (strcmp(input, "quit") == 0) {
@@ -101,7 +100,6 @@ int main(int argc, char *argv[]) {
             break;
         }
 
-        // Process the user input here...
         int success = parse_command(&cmd, input, input_size);
         if (success != 0) {
             printf("command invalid\n\n");

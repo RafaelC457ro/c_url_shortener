@@ -8,11 +8,10 @@ Just a command line trivial url shortener. I not implemented a real hash table y
 
 - [x] Shorten urls
 - [ ] implement a real hash table
-- [ ] create a server using sockets
 
 ## Install
 
-## lixux
+## Linux
 
 ```sh
 sudo apt install build-essential cmake
