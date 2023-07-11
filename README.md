@@ -2,12 +2,27 @@
 
 ![C/C++ CI](https://github.com/RafaelC457ro/c_url_shortener/workflows/C/C++%20CI/badge.svg?branch=master)
 
-Just a command line url shortener.
+Just a command line trivial url shortener. I not implemented a real hash table yet, so probably it will not work with a lot of urls.
+
+# Goals
+
+- [x] Shorten urls
+- [ ] implement a real hash table
+- [ ] create a server using sockets
 
 ## Install
 
+## lixux
+
 ```sh
-sudo apt install build-essential cmake libcmocka-dev
+sudo apt install build-essential cmake
+```
+
+## Mac
+
+```sh
+xcode-select --install
+brew install cmake
 ```
 
 ## Build
@@ -23,8 +38,7 @@ make
 
 ```sh
 cd build\
-make
-ctest -V
+make test
 ```
 
 ## Usage
@@ -32,7 +46,7 @@ ctest -V
 ```sh
 ./bin/shortener
 
-SET www.url.com
+PUT www.url.com
 
 xjsikxzns
 
@@ -42,7 +56,7 @@ www.url.com
 
 ```
 
-type `exit` to exit.
+type `quit` to exit.
 
 ## License
 

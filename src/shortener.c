@@ -64,9 +64,9 @@ void handle_get_command(HashList *h, char *k) {
     char *scmp;
 
     if (hash_list_get(h, k, &scmp) != 0) {
-        printf("key not found\n");
+        printf("key not found\n\n");
     } else {
-        printf("%s\n", scmp);
+        printf("%s\n\n", scmp);
     }
 }
 
@@ -80,24 +80,31 @@ void handle_put_command(HashList *h, char *v) {
     }
 
     hash_list_append(h, key, v);
-    printf("%s\n", key);
+    printf("%s\n\n", key);
 }
 
 int main(int argc, char *argv[]) {
-    const char EXIT_COMMAND[] = "exit\n";
-    char *line = "";
-    size_t len = 0;
-    size_t read;
-    Command cmd;
+    char *input = NULL;
+    size_t input_size = 0;
     HashList *h = hash_list_init();
+    Command cmd;
+    
+    printf("Enter a command (or 'quit' to exit): \n\n");
+    while (1) {   
+        getline(&input, &input_size, stdin);
 
-    while ((read = getline(&line, &len, stdin)) != -1) {
-        if (strcmp(EXIT_COMMAND, line) == 0) {
-            exit(0);
+        // Remove the newline character from the input
+        input[strcspn(input, "\n")] = '\0';
+
+        if (strcmp(input, "quit") == 0) {
+            printf("Exiting the program...\n");
+            break;
         }
-        int success = parse_command(&cmd, line, read);
+
+        // Process the user input here...
+        int success = parse_command(&cmd, input, input_size);
         if (success != 0) {
-            printf("command invalid\n");
+            printf("command invalid\n\n");
         } else {
             if (cmd.type == TYPE_GET) {
                 handle_get_command(h, cmd.payload);
@@ -106,8 +113,10 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-    free_command(&cmd);
+
+    free(input); 
     hash_list_free(h);
-    free(line);
-    exit(0);
+    free_command(&cmd);
+
+    return 0;
 }

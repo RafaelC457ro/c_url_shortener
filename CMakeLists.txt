@@ -1,6 +1,6 @@
 # Specif tnlProject_Adde minimum version for CMake
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.18)
 
 # Project's name
 project(c_url_shortener)
